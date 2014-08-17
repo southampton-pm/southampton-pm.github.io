@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Southampton.pm - Southampton Perl Mongers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+    <meta name="description" content="">
+    <meta name="author" content="">
+-->
+
+<link href="/bootstrap-2.0.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://plus.google.com/108047829558592114887" rel="publisher" />
+<style type="text/css">
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.hero-unit {
+    color: white;
+    background-color: #87CEFA;
+    background-image: url('/assets/img/hero.jpg');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    padding-bottom: 100px;
+}
+</style>
+<link href="/bootstrap-2.0.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+<!--
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Southampton.pm</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#join">Join us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+
+<div class="container">
+
+<div class="hero-unit">
+<h1>Do <em>you</em> use Perl?</h1>
+<p>The Southampton Perl Mongers meet to discuss Perl on the first Wednesday of the month.</p>
+</div>
+
+<section id="join">
+<div class="page-header">
+<h1>Southampton.pm <small>Southampton Perl Mongers</small></h1>
+</div>
+
+<div class="row">
+
+<div class="span4">
+<h2>About Us</h2>
+<p>Southampton.pm is a local community of Perl users, under the international Perl Mongers umbrella.</p>
+
+<ul class="thumbnails">
+<li class="span2">
+<a href="/assets/img/inaugural-sign.jpg" class="thumbnail">
+<img src="/assets/img/inaugural-sign_160x120.jpg" alt="Inaugural sign">
+</a>
+</li>
+<li class="span2">
+<a href="/assets/img/first-meeting.jpg" class="thumbnail">
+<img src="/assets/img/first-meeting_160x120.jpg" alt="Our first meeting">
+</a>
+</li>
+</ul>
+
+<ul>
+<li><a href="http://www.pm.org/">Perl Mongers</a></li>
+</ul>
+
+<h2>About Perl</h2>
+<p>Perl 5 is a highly capable, feature-rich programming language with over 23 years of development.</p>
+<ul>
+<li><a href="http://www.perl.org/">www.perl.org</a></li>
+<li><a href="http://www.perlfoundation.org/">The Perl Foundation</a></li>
+</ul>
+</div>
+
+<div class="span4">
+<h2>Meetings</h2>
+<p>We meet on the first Wednesday of each month, at 8pm in the Platform Tavern.</p>
+
+<p>The next three meetings will be:</p>
+<ul>
+<li>Wednesday, 3rd September 2014</li>
+<li>Wednesday, 1st October 2014</li>
+<li>Wednesday, 5th November 2014</li>
+</ul>
+
+<p>(Contact the mailing list if this list seems out of date.)</p>
+
+<h2>Contact</h2>
+<p>The Southampton-pm mailing list is low traffic, and will have announcements of future meetings.</p>
+<ul>
+<li><a href="http://mail.pm.org/mailman/listinfo/southampton-pm">Subscribe/Unsubscribe</a></li>
+<li><a href="http://mail.pm.org/pipermail/southampton-pm/">List Archives</a></li>
+</ul>
+
+<p>We are also on Twitter and <a href="https://plus.google.com/108047829558592114887">Google+</a>!</p>
+<a href="https://twitter.com/SouthamptonPM" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @SouthamptonPM</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+<div class="span4">
+<div id="map" style="width: 100%"></div>
+</div>
+
+</div> <!-- row -->
+
+</section>
+
+<hr>
+
+<footer>
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="SouthamptonPM" data-size="large">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<p>Last updated: 2014-08-17</p>
+</footer>
+
+</div> <!-- /container -->
+
+<script src="/assets/js/jquery-1.7.2.min.js"></script>
+<script src="/bootstrap-2.0.2/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#navbar').scrollspy();
+});
+</script>
+<script src="/openlayers-2.11/OpenLayers.js"></script>
+    <script type="text/javascript">
+        var map, layer;
+        $(document).ready(function (){
+	    // Make the map square.
+	    $('#map').height($('#map').width());
+
+
+            map = new OpenLayers.Map('map');
+            layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
+            map.addLayer(layer);
+            map.setCenter(
+                new OpenLayers.LonLat(-1.403754, 50.896331).transform(
+                    new OpenLayers.Projection("EPSG:4326"),
+                    map.getProjectionObject()
+                ), 17
+            );
+        });
+    </script>
+
+</body>
+</html>
