@@ -27,6 +27,26 @@ body {
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <script src="/assets/js/jquery-1.7.2.min.js"></script>
+    <script src="/bootstrap-2.0.2/js/bootstrap.min.js"></script>
+    <script src="/openlayers-2.11/OpenLayers.js"></script>
+    <script>
+        $(function(){
+            // Make the map square.
+            var div = $('#map');
+            div.height(div.width());
+
+            var map = new OpenLayers.Map('map');
+
+            map.addLayer(new OpenLayers.Layer.OSM('Simple OSM Map'));
+            map.setCenter(
+                new OpenLayers.LonLat(-1.403754, 50.896331).transform(
+                    new OpenLayers.Projection('EPSG:4326'),
+                    map.getProjectionObject()
+                ), 17
+            );
+        });
+    </script>
 </head>
 <body>
 
@@ -116,28 +136,6 @@ body {
 </footer>
 
 </div> <!-- /container -->
-
-<script src="/assets/js/jquery-1.7.2.min.js"></script>
-<script src="/bootstrap-2.0.2/js/bootstrap.min.js"></script>
-<script src="/openlayers-2.11/OpenLayers.js"></script>
-    <script type="text/javascript">
-        var map, layer;
-        $(document).ready(function (){
-	    // Make the map square.
-	    $('#map').height($('#map').width());
-
-
-            map = new OpenLayers.Map('map');
-            layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
-            map.addLayer(layer);
-            map.setCenter(
-                new OpenLayers.LonLat(-1.403754, 50.896331).transform(
-                    new OpenLayers.Projection("EPSG:4326"),
-                    map.getProjectionObject()
-                ), 17
-            );
-        });
-    </script>
 
 </body>
 </html>
