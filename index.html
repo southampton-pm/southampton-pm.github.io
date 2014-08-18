@@ -9,33 +9,28 @@
     "width=device-width, initial-scale=1.0">
     <link href="https://plus.google.com/108047829558592114887" rel=
     "publisher">
-    <link href="/bootstrap-2.0.2/css/bootstrap.min.css" rel=
-    "stylesheet">
-    <link href="/bootstrap-2.0.2/css/bootstrap-responsive.min.css"
-    rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
 body {
             padding: 40px 0;
         }
 
-        .hero-unit {
+        .jumbotron {
             background: url(/assets/img/hero.jpg) left bottom no-repeat;
             color: #fff;
-            padding-bottom: 100px;
+            padding-bottom: 95px;
+            padding-top: 40px;
         }
 
         #map {
             width: 100%;
         }
     </style>
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
-    <script src="/assets/js/jquery-1.7.2.min.js">
+    <script src=
+    "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
 </script>
-    <script src="/bootstrap-2.0.2/js/bootstrap.min.js">
+    <script src="/bootstrap/js/bootstrap.min.js">
 </script>
     <script src="/open-layers/OpenLayers.js">
 </script>
@@ -60,7 +55,7 @@ $(function(){
 
 <body>
     <div class="container">
-        <header class="hero-unit">
+        <header class="jumbotron">
             <h1>Do <em>you</em> use Perl?</h1>
 
             <p>The Southampton Perl Mongers meet to discuss Perl on
@@ -74,29 +69,29 @@ $(function(){
             </div>
 
             <div class="row">
-                <div class="span4">
+                <div class="col-lg-4">
                     <h2>About Us</h2>
 
                     <p>Southampton.pm is a local community of Perl
                     users, under the international Perl Mongers
                     umbrella.</p>
 
-                    <ul class="thumbnails">
-                        <li class="span2">
+                    <div class="row">
+                        <div class="col-xs-6">
                             <a href=
                             "/assets/img/inaugural-sign.jpg" class=
                             "thumbnail"><img src=
                             "/assets/img/inaugural-sign_160x120.jpg"
                             alt="Inaugural sign"></a>
-                        </li>
+                        </div>
 
-                        <li class="span2">
+                        <div class="col-xs-6">
                             <a href="/assets/img/first-meeting.jpg"
                             class="thumbnail"><img src=
                             "/assets/img/first-meeting_160x120.jpg"
                             alt="Our first meeting"></a>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
 
                     <ul>
                         <li>
@@ -125,7 +120,7 @@ $(function(){
                     </ul>
                 </div>
 
-                <div class="span4">
+                <div class="col-lg-4">
                     <h2>Meetings</h2>
 
                     <p>We meet on the first Wednesday of each
@@ -175,7 +170,7 @@ $(function(){
                     </script>
                 </div>
 
-                <div class="span4">
+                <div class="col-lg-4">
                     <div id="map"></div>
                 </div>
             </div><!-- row -->
